@@ -69,6 +69,17 @@ class Player(val beans: Beans, guildProperties: GuildProperties) : AudioEventAda
         }
         return false
     }
+    /**
+    créé à l'arrache par bratik pour ajouter directement à la suite
+     */
+    fun addNext(vararg tracks: AudioTrack): Boolean {
+        queue.addNext(*tracks)
+        if (player.playingTrack == null) {
+            player.playTrack(queue.take()!!)
+            return true
+        }
+        return false
+    }
 
     fun skip(range: IntRange): List<AudioTrack> {
         val rangeFirst = range.first.coerceAtMost(queue.tracks.size)
