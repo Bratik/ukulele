@@ -20,6 +20,12 @@ class TrackQueue {
          newTracksQueue.addAll(tracks)
          queue = (newTracksQueue+queue).toMutableList()
     }
+    /**
+    bratik: shuffle la playlist
+     */    
+    fun shuffle() {
+        queue = queue.toMutableList().shuffled().toMutableList()
+    } 
     fun take() = queue.removeFirstOrNull()
     fun peek() = queue.firstOrNull()
     fun clear() = queue.clear()

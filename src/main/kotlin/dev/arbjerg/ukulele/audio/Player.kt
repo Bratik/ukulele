@@ -99,6 +99,13 @@ class Player(val beans: Beans, guildProperties: GuildProperties) : AudioEventAda
         return skipped
     }
 
+    /**
+    bratik: shuffling the current playlist
+    */
+    fun shuffle(){
+        queue.shuffle()
+    }
+
     fun pause() {
         player.isPaused = true
     }
