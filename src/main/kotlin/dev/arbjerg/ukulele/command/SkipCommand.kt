@@ -8,7 +8,10 @@ import dev.arbjerg.ukulele.jda.CommandContext
 import org.springframework.stereotype.Component
 
 @Component
-class SkipCommand : Command("skip", "s") {
+/**
+bratik: j'ai ajouté next en synonyme de skip
+ */
+class SkipCommand : Command("skip", "s", "next") {
     override suspend fun CommandContext.invoke() {
         when {
             argumentText.isBlank() -> skipNext()
